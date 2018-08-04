@@ -1,0 +1,20 @@
+h1 {
+    color: #C3073F;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+::placeholder {
+    color: #c5c6c7;
+}
+
+.search {
+    background-color: #6F2232;
+    font-weight: bold;
+    color: #c5c6c7;
+}
+
+.header {
+    background-color: #6F2232;
+    color: #c5c6c7;
+}
