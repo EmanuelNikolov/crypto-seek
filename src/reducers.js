@@ -2,7 +2,10 @@ import {
     CHANGE_SEARCH_VALUE,
     REQUEST_COINS_PENDING,
     REQUEST_COINS_SUCCESS,
-    REQUEST_COINS_FAIL
+    REQUEST_PRICES_PENDING,
+    REQUEST_COINS_FAIL,
+    REQUEST_PRICES_SUCCESS,
+    REQUEST_PRICES_FAIL
 } from "./constants";
 
 const initialStateSearch = {
@@ -32,6 +35,25 @@ export const requestCoins = (state=initialStateCoins, action={}) => {
             return Object.assign({}, state, {isPending: false, coins: action.payload});
         case REQUEST_COINS_FAIL:
             return Object.assign({}, state, {isPending: false, error: action.payload});
+        default:
+            return state;
+    }
+};
+
+const initialStatePrices = {
+    isPendingPrices: false,
+    prices: {},
+    errorPrices: ''
+};
+
+export const requestPrices = (state=initialStatePrices, action={}) => {
+    switch (action.type) {
+        case REQUEST_PRICES_PENDING:
+            return Object.assign({}, state, {isPendingPrice: true});
+        case REQUEST_PRICES_SUCCESS:
+            return Object.assign({}, state, {isPendingPrices: false, prices: action.payload});
+        case REQUEST_PRICES_FAIL:
+            return Object.assign({}, state, {isPendingPrices: false, errorPrices: action.payload});
         default:
             return state;
     }

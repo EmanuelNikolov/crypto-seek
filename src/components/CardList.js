@@ -9,6 +9,7 @@ const CardList = ({coins}) => {
                     return (
                         <Card key={coins[i].id}
                               id={coins[i].id}
+                              price={coins[i].price}
                               name={coins[i].name}
                               img={coins[i].img}
                         />
