@@ -4,6 +4,7 @@ import App from './containers/App';
 import registerServiceWorker from './registerServiceWorker';
 import 'tachyons';
 import './index.css';
+import {allCoins} from "./coins";
 
-ReactDOM.render(<App/>, document.getElementById('root'));
+ReactDOM.render(<App allCoins={allCoins}perPage={12}/>, document.getElementById('react-paginate'));
 registerServiceWorker();
