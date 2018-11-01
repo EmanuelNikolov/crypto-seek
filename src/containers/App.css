@@ -18,3 +18,27 @@ h1 {
     background-color: #6F2232;
     color: #c5c6c7;
 }
+
+.page-link {
+    color: #c5c6c7;
+    background-color: #6F2232;
+    border-color: #6F2232;
+}
+
+.page-link:hover {
+    color: darkslategray;
+    background-color: #F5F5F5;
+    border-color: #F5F5F5;
+}
+
+.page-item.active .page-link {
+    color: #1A1A1D;
+    background-color: #F5F5F5;
+    border-color: #F5F5F5;
+}
+
+.page-item.disabled .page-link {
+    color: #F5F5F5;
+    background-color: #797a7b;
+    border-color: #797a7b;
+}

@@ -3,29 +3,25 @@ import Card from "../components/Card";
 
 class CardList extends Component {
     render() {
-        console.log("end");
         let coinPrices = this.props.coinPrices;
         let finalCoins = this.props.coins.map((coin, i) => {
-            let price = coinPrices[coin.Symbol];
-
-            if (price === undefined) {
-                price = "Not available :(";
-            } else {
-                price = price['USD'].toString();
-            }
+            let price = coinPrices[coin.Symbol]
+                ? coinPrices[coin.Symbol]["USD"].toString()
+                : "Not available :(";
 
             return (
-                <span>
+                <div>
                     <Card key={i}
                           price={price}
                           name={coin.CoinName}
                           img={coin.ImageUrl}
                     />
-                </span>
-            )
+                </div>
+            );
         });
+
         return (
-            <div>
+            <div className={"d-flex flex-wrap justify-content-center"}>
                 {finalCoins}
             </div>
         )

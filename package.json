@@ -8,6 +8,7 @@
     "react-dom": "^16.6.0",
     "react-paginate": "^5.2.4",
     "react-scripts": "1.1.4",
+    "react-spinners": "^0.4.7",
     "tachyons": "^4.11.1"
   },
   "scripts": {

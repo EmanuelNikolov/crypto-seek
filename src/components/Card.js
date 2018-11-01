@@ -4,13 +4,11 @@ const Card = ({id, name, img, price}) => {
     let fullImageUrl = 'https://www.cryptocompare.com' + img;
 
     return (
-        <div className="flex-auto header br4 dib pa3 ma2 grow bw2 shadow-5">
-            <img alt={name} src={fullImageUrl} height='200' width='200'/>
-            <div>
-                <h2 className='f5'>{name}</h2>
-                <p>{price}</p>
-                <p>USD</p>
-            </div>
+        <div className="card-item header br4 dib p-2 ma2 grow bw2 shadow-5">
+            <img alt={name} src={fullImageUrl} height='100' width='100'/>
+            <p>{name}</p>
+            <p>{price}</p>
+            <p>USD</p>
         </div>
     );
 };
