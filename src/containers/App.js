@@ -30,10 +30,14 @@ class App extends Component {
         });
 
         if (coins.length === 0) {
-            this.setState({noResults: true});
+            this.setState({noResults: true, loading: false});
         } else {
             this.searchResults = coins;
-            this.setState({pageCount: coins.length / this.props.perPage, offset: 0}, () => this.loadCoins());
+            this.setState({
+                pageCount: coins.length / this.props.perPage,
+                offset: 0,
+                noResults: false
+            }, () => this.loadCoins());
         }
     };
 
@@ -73,11 +77,11 @@ class App extends Component {
         let cardListContainer;
 
         if (noResults) {
-            cardListContainer = <h4 className='tc white'>Nothing found :(</h4>;
+            cardListContainer = <div className={"loading"}><h4 className='tc white'>Nothing found :(</h4></div>;
         } else {
             cardListContainer = (
                 <div>
-                    <div className={"pa3 card-list"}>
+                    <div className={"pt3 pb2 card-list"}>
                         <CardList coins={this.state.coins} coinPrices={this.state.coinPrices}/>
                     </div>
                     <ReactPaginate

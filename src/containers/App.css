@@ -8,6 +8,10 @@ p {
     margin: 0.5rem;
 }
 
+ul {
+    margin-bottom: 0;
+}
+
 ::placeholder {
     color: #c5c6c7;
 }
@@ -63,6 +67,10 @@ textarea:focus, input:focus{
 }
 
 @media screen and (max-width: 500px) {
+    ul {
+        margin-bottom: 1rem;
+    }
+
     .pagination-sm {
         margin-left: 7%;
         margin-right: 7%;
