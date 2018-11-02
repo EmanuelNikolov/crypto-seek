@@ -77,22 +77,22 @@ class App extends Component {
         } else {
             cardListContainer = (
                 <div>
-                    <div className={"pa2"}>
+                    <div className={"pa3 card-list"}>
                         <CardList coins={this.state.coins} coinPrices={this.state.coinPrices}/>
                     </div>
                     <ReactPaginate
                         previousLabel={"«"}
                         nextLabel={"»"}
                         breakLabel={"..."}
-                        breakClassName={"page-link"}
+                        breakClassName={"page-link page-number"}
                         pageCount={this.state.pageCount}
-                        marginPagesDisplayed={2}
+                        marginPagesDisplayed={1}
                         pageRangeDisplayed={5}
                         onPageChange={this.handlePageClick}
-                        containerClassName={"pagination pagination-sm justify-content-center"}
+                        containerClassName={"pagination pagination-sm justify-content-center pa2"}
                         subContainerClassName={"pages pagination"}
                         activeClassName={"active"}
-                        pageClassName={"page-item"}
+                        pageClassName={"page-item page-number"}
                         pageLinkClassName={"page-link"}
                         previousClassName={"page-item"}
                         previousLinkClassName={"page-link"}
@@ -108,12 +108,14 @@ class App extends Component {
             <div className='tc'>
                 <h1 className='f1'>Crypto Seek</h1>
                 <SearchField searchUpdate={this.onSearchChange}/>
-                <div className={"d-flex justify-content-center align-self-center"}>
-                    <HashLoader size={160}
-                                loading={this.state.loading}
-                                color={"#6F2232"}
-                    />
-                </div>
+                {
+                    loading &&
+                    <div className={"loading"}>
+                        <HashLoader size={150}
+                                    loading={this.state.loading}
+                                    color={"#6F2232"}/>
+                    </div>
+                }
                 {!loading && cardListContainer}
             </div>
         );

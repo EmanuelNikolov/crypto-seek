@@ -6,5 +6,5 @@ import 'tachyons';
 import './index.css';
 import {allCoins} from "./coins";
 
-ReactDOM.render(<App allCoins={allCoins} perPage={18}/>, document.getElementById('container'));
+ReactDOM.render(<App allCoins={allCoins} perPage={12}/>, document.getElementById('container'));
 registerServiceWorker();

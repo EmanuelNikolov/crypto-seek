@@ -4,6 +4,10 @@ h1 {
     text-transform: uppercase;
 }
 
+p {
+    margin: 0.5rem;
+}
+
 ::placeholder {
     color: #c5c6c7;
 }
@@ -14,9 +18,24 @@ h1 {
     color: #c5c6c7;
 }
 
+textarea:focus, input:focus{
+    outline: none;
+}
+
 .header {
     background-color: #6F2232;
     color: #c5c6c7;
+}
+
+.card-item {
+    flex-grow: 1;
+    min-width: 200px;
+    max-height: 250px;
+}
+
+.card-list {
+    margin-left: 5%;
+    margin-right: 5%;
 }
 
 .page-link {
@@ -39,6 +58,29 @@ h1 {
 
 .page-item.disabled .page-link {
     color: #F5F5F5;
-    background-color: #797a7b;
-    border-color: #797a7b;
+    background-color: rgba(121, 122, 123, 0.4);
+    border-color: rgba(121, 122, 123, 0.4);
+}
+
+@media screen and (max-width: 500px) {
+    .pagination-sm {
+        margin-left: 7%;
+        margin-right: 7%;
+    }
+
+    .page-number {
+        display: none;
+    }
+
+    .page-item {
+        flex-grow: 1;
+    }
+}
+
+/* Absolute Center Spinner */
+.loading {
+    height: 65vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

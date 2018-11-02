@@ -10,7 +10,7 @@ class CardList extends Component {
                 : "Not available :(";
 
             return (
-                <div>
+                <div className={"flex card-item"}>
                     <Card key={i}
                           price={price}
                           name={coin.CoinName}
@@ -21,7 +21,7 @@ class CardList extends Component {
         });
 
         return (
-            <div className={"d-flex flex-wrap justify-content-center"}>
+            <div className={"flex flex-wrap justify-center"}>
                 {finalCoins}
             </div>
         )
